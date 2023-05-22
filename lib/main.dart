@@ -78,15 +78,21 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
-        const Expanded(
+        Expanded(
           child: Padding(
-            padding: EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(15.0),
             child: TextButton(
-              onPressed: null,
-              style: ButtonStyle(
+              onPressed: () {
+                //The user picked true
+                scoreKeeper.add(const Icon(
+                  Icons.check,
+                  color: Colors.green,
+                ));
+              },
+              style: const ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll<Color>(Colors.green),
               ),
-              child: Text(
+              child: const Text(
                 'True',
                 style: TextStyle(
                   color: Colors.white,
@@ -96,15 +102,20 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
-        const Expanded(
+        Expanded(
           child: Padding(
-            padding: EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(15.0),
             child: TextButton(
-              style: ButtonStyle(
+              style: const ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(Colors.red),
               ),
-              onPressed: null,
-              child: Text(
+              onPressed: () {
+                scoreKeeper.add(const Icon(
+                  Icons.close,
+                  color: Colors.red,
+                ));
+              },
+              child: const Text(
                 'False',
                 style: TextStyle(
                   color: Colors.white,
